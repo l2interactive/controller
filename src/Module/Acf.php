@@ -82,7 +82,7 @@ class Acf
         }
 
         if (get_fields('options')) {
-            $this->data = $this->data ?? [];
+            $this->data = empty($this->data) ? [] : $this->data;
             $this->data['acf_options'] = get_fields('options');
         } else {
             return [];
